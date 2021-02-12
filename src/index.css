@@ -1,27 +1,3 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
-
-/* Utilities */
-/*** this is standardised in industry to hide but keen for screen readers*******//
-.visuallyhidden { 
-  position: absolute; 
-  overflow: hidden; 
-  clip: rect(0 0 0 0); 
-  height: 1px; width: 1px; 
-  margin: -1px; padding: 0; border: 0; 
-}
-
 /* Foundation Elements */
 .body {
   font-family: Arial, Helvetica, sans-serif;
@@ -29,6 +5,17 @@ code {
   margin: 0 auto;
   max-width: 900px;
   padding: 0 8px;
+
+}
+
+/* Utilities */
+/*** this is standardised in industry to hide but keen for screen readers*******/
+.visuallyhidden { 
+  position: absolute; 
+  overflow: hidden; 
+  clip: rect(0 0 0 0); 
+  height: 1px; width: 1px; 
+  margin: -1px; padding: 0; border: 0; 
 }
 
 .button {
