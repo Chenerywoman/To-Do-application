@@ -1,38 +1,32 @@
+/* CREATE REACT APP STYLING */
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* CUSTOM STYLING */
+
+/* Header */
+.header {
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* Tasks */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.all-tasks {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 0 auto;
+  max-width: 700px;
 }
 
-.App-link {
-  color: #61dafb;
+.incomplete-tasks, .complete-tasks {
+  flex: 1 1 auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.task-list {
+  list-style-type: none;
+  padding-inline-start: 0;
 }
+

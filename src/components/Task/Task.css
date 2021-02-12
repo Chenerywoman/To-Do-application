@@ -1,0 +1,11 @@
+.task__text {
+    margin-bottom: 0;
+  }
+  
+  .task {
+    margin-bottom: 16px;
+  }
+  
+  .task--complete .task__text {
+    text-decoration: line-through;
+  }

@@ -1,0 +1,27 @@
+/* Add Task */
+.add-task__input-field {
+    height: 30px;
+    margin: 6px 0;
+  }
+  
+  .add-task__actions {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 500px;
+  }
+  
+  @media screen and (min-width: 600px) {
+    .add-task__actions {
+      flex-direction: row;
+      gap: 8px;
+    }
+  
+    .add-task__input-field {
+      flex-basis: 75%;
+    }
+  
+    .add-task__actions .button {
+      flex-basis: 25%;
+    }
+  }
