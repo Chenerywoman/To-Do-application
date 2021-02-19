@@ -5,10 +5,6 @@ function AddTask({addTask}) {
 
     const [text, setText] = useState("");
     
-    const handleChange  = event => {
-        setText(event.target.value);
-    }
-
     const handleClick = () =>{
         addTask(text);
         setText("");
