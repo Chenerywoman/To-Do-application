@@ -15,6 +15,13 @@ function App() {
         {text: "Do the food shop", completed: false, date: "2020-09-18", id:'006'},
     ]); 
 
+    const deleteTask = id => {
+
+      const updatedTasks = tasks.filter(task => task.id !== id);
+
+      setTasks(updatedTasks);
+
+    }
     const incompleteTasks = tasks.filter(task => !task.completed);
     const completeTasks = tasks.filter(task => task.completed);
 
@@ -22,8 +29,8 @@ function App() {
     <div className="App">
     < Header taskCount={incompleteTasks.length}/>
     <main className="all-tasks">
-       <TaskList tasks={incompleteTasks} status="incomplete"/>
-       <TaskList tasks={completeTasks} status="complete"/>
+       <TaskList deleteTask={ deleteTask } tasks={incompleteTasks} status="incomplete"/>
+       <TaskList deleteTask={ deleteTask } tasks={completeTasks} status="complete"/>
     </main>
     </div>
   );
