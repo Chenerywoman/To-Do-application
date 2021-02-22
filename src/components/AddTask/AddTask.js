@@ -3,26 +3,26 @@ import { useState } from 'react';
 
 function AddTask({addTask}) {
 
-    const [text, setText] = useState("");
+    const [text, setText] = useState('');
     
     const handleClick = () =>{
         addTask(text);
-        setText("");
+        setText('');
     }
 
     return (
 
-        <div className="add-task__actions">
-            <label htmlFor="add-task-input" className="visuallyhidden">
+        <div className='add-task__actions'>
+            <label htmlFor='add-task-input' className='visuallyhidden'>
                 Add new to do task
             </label>
             <input 
                 value={ text }
                 onChange={ (event) => setText(event.target.value) } 
-                id="add-task-input" 
-                className="add-task__input-field">
+                id='add-task-input' 
+                className='add-task__input-field'>
             </input>
-            <button onClick={ handleClick } className="button">
+            <button onClick={ handleClick } className='button'>
                 Add
             </button>
         </div>

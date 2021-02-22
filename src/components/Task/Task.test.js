@@ -12,15 +12,15 @@ describe('Task component', () => {
             Then the task text should be present.`, () => {
                 
                 const requiredTaskProps = {
-                    id:"001", 
-                    text:"This is a task", 
+                    id:'001', 
+                    text:'This is a task', 
                     complete: false, 
                     deleteTask: () => {}
                 }
 
                 render(<Task {...requiredTaskProps}/>)
 
-                expect(screen.getByText("This is a task")).toBeInTheDocument();
+                expect(screen.getByText('This is a task')).toBeInTheDocument();
             });
 
     test(`
@@ -29,8 +29,8 @@ describe('Task component', () => {
             Then the delete button should be present`, () => {
                 
                 const requiredTaskProps = {
-                    id:"001", 
-                    text:"This is a task", 
+                    id:'001', 
+                    text:'This is a task', 
                     complete: false, 
                     deleteTask: () => {}
                 }
@@ -38,13 +38,13 @@ describe('Task component', () => {
                 render(<Task {...requiredTaskProps}/>)
 
                 expect(screen
-                    .getAllByRole("button")
-                    .find(button => button.textContent === "Delete"))
+                    .getAllByRole('button')
+                    .find(button => button.textContent === 'Delete'))
                     .toBeInTheDocument();
 
                 expect(screen
-                    .getAllByRole("button")
-                    .filter(button => button.textContent === "Delete")
+                    .getAllByRole('button')
+                    .filter(button => button.textContent === 'Delete')
                     .length)
                     .toBe(1);
 
@@ -56,8 +56,8 @@ describe('Task component', () => {
             Then the complete button should not be present`, () => {
 
                 const completedTaskProps = {
-                    id:"001", 
-                    text:"This is a task", 
+                    id:'001', 
+                    text:'This is a task', 
                     complete: true, 
                     deleteTask: () => {}
                 }
@@ -65,8 +65,8 @@ describe('Task component', () => {
                 render(<Task {...completedTaskProps}/>)
 
                 expect(screen
-                    .getAllByRole("button")
-                    .filter(button => button.textContent === "Complete")
+                    .getAllByRole('button')
+                    .filter(button => button.textContent === 'Complete')
                     .length)
                     .toBe(0)
             });
@@ -77,8 +77,8 @@ describe('Task component', () => {
             Then the complete button should be present`, () => {
 
                 const incompleteTaskProps = {
-                    id:"001", 
-                    text:"This is a task", 
+                    id:'001', 
+                    text:'This is a task', 
                     complete: false, 
                     deleteTask: () => {}
                 }
@@ -86,8 +86,8 @@ describe('Task component', () => {
                 render(<Task {...incompleteTaskProps}/>)
 
                 expect(screen
-                    .getAllByRole("button")
-                    .filter(button => button.textContent === "Complete")
+                    .getAllByRole('button')
+                    .filter(button => button.textContent === 'Complete')
                     .length)
                     .toBe(1)
             });
@@ -99,18 +99,18 @@ describe('Task component', () => {
 
                 const mockDeleteFunction = jest.fn();
 
-                const testTaskId = "001";
+                const testTaskId = '001';
 
                 const requiredTaskProps = {
                     id:testTaskId, 
-                    text:"This is a task", 
+                    text:'This is a task', 
                     complete: false, 
                     deleteTask: mockDeleteFunction
                 }
 
                 render(<Task {...requiredTaskProps}/>)
 
-                const deleteButton = screen.getAllByRole("button").find(button => button.textContent === "Delete");
+                const deleteButton = screen.getAllByRole('button').find(button => button.textContent === 'Delete');
 
                 userEvent.click(deleteButton);
 

@@ -1,18 +1,16 @@
 import {useState} from 'react';
-import AddTask from './components/AddTask/AddTask';
 import Header from './components/Header/Header';
-import Task from './components/Task/Task';
 import TaskList from './components/TaskList/TaskList';
 import './App.css';
 
 function App() {
 
     const [tasks, setTasks] = useState([
-        {text: "Buy cat food", completed: false, date: "2020-12-01", id: '001'}, {text: "Buy milk", completed: true, date: "2020-12-05", id:'002'},
-        {text: "Clean the kitchen", completed: false, date: "2020-11-", id:'003'},
-        {text: "Go to sleep", completed: true, date: "2020-09-18", id:'004'},
-        {text: "Go for a walk", completed: false, date: "2020-09-18", id:'005'},
-        {text: "Do the food shop", completed: false, date: "2020-09-18", id:'006'},
+        {text: 'Buy cat food', completed: false, date: '2020-12-01', id: '001'}, {text: 'Buy milk', completed: true, date: '2020-12-05', id:'002'},
+        {text: 'Clean the kitchen', completed: false, date: '2020-11-', id:'003'},
+        {text: 'Go to sleep', completed: true, date: '2020-09-18', id:'004'},
+        {text: 'Go for a walk', completed: false, date: '2020-09-18', id:'005'},
+        {text: 'Do the food shop', completed: false, date: '2020-09-18', id:'006'},
     ]); 
 
     const deleteTask = id => {
@@ -28,8 +26,8 @@ function App() {
       const newTask = {
         text: text, 
         completed: false,
-        date: "2021-12-01",
-        id: "007"
+        date: '2021-12-01',
+        id: '007'
       }
 
       const updatedTasks = [ ...tasks, newTask];
@@ -41,11 +39,11 @@ function App() {
     const completeTasks = tasks.filter(task => task.completed);
 
   return (
-    <div className="App">
+    <div className='App'>
     < Header taskCount={incompleteTasks.length} addTask={ addTask }/>
-    <main className="all-tasks">
-       <TaskList deleteTask={ deleteTask } tasks={incompleteTasks} status="incomplete"/>
-       <TaskList deleteTask={ deleteTask } tasks={completeTasks} status="complete"/>
+    <main className='all-tasks'>
+       <TaskList deleteTask={ deleteTask } tasks={incompleteTasks} status='incomplete'/>
+       <TaskList deleteTask={ deleteTask } tasks={completeTasks} status='complete'/>
     </main>
     </div>
   );
