@@ -15,10 +15,11 @@ function App() {
   // ]); 
 
   const [tasks, setTasks] = useState([]);
+  const userId = '299982cb-82aa-4a7b-9fef-e92fd7abd41b';
 
   useEffect(() => {
     // initiate a get request to api endpoint
-    axios.get('https://qyyetfu7di.execute-api.eu-west-2.amazonaws.com/dev/users/299982cb-82aa-4a7b-9fef-e92fd7abd41b/tasks')
+    axios.get(`https://qyyetfu7di.execute-api.eu-west-2.amazonaws.com/dev/users/${userId}/tasks`)
       // promise resolves - update state of tasks
       .then(response => setTasks(response.data))
       // if error - log out error
@@ -38,14 +39,19 @@ function App() {
     const newTask = {
       description: text,
       completed: false,
-      taskId: '007'
     }
 
-    const updatedTasks = [...tasks, newTask];
-    setTasks(updatedTasks);
+    // make a post request & pass in new task as the body
 
-
+    axios.post(`https://qyyetfu7di.execute-api.eu-west-2.amazonaws.com/dev/users/${userId}/tasks`, newTask)
+      // if get request is successful, add a get request for all the tasks
+      .then(() => axios.get(`https://qyyetfu7di.execute-api.eu-west-2.amazonaws.com/dev/users/${userId}/tasks`))
+      // if get request is successful update tasks state will tasks array
+      .then(response => setTasks(response.data))
+      // if error, log out the error
+      .catch(error => console.log(error))
   }
+
   const incompleteTasks = tasks.filter(task => !task.completed);
   const completeTasks = tasks.filter(task => task.completed);
 
